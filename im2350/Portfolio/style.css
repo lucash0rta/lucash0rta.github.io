@@ -1,0 +1,95 @@
+* {
+    font-family: 'Arial Bold', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --col01: rgb(0, 0, 0);
+    --col02: rgb(80, 80, 80);
+    --col03: rgb(180, 180, 180);
+    --col04: rgb(240, 240, 240);
+    --border: solid 1rem var(--col03);
+}
+
+
+
+body{ background-image:radial-gradient(circle, rgb(132, 132, 132), white);
+}
+
+.flexbox-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+.BoxStyle {
+    position: relative; /* Add position relative to create stacking context */
+    background-color: rgb(142, 142, 142);
+    margin: 1rem;
+    min-width: 400px;
+    max-width: 40%;
+    height: 30vh;
+    flex-grow: 1;
+    transition: background-color 0.3s;
+    overflow: hidden;
+    display: flex; /* Add display flex to enable vertical alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+/* Add hover styles for the overlay effect */
+.BoxStyle:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.OverlayText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0; /* Hide the text by default */
+    transition: opacity 0.3s;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+/* Show the overlay text on hover */
+.BoxStyle:hover .OverlayText {
+    position: absolute;
+    opacity: 0.8;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.PillRadius {
+    border-radius: 5px;
+}
+
+h1 {
+    color: white;
+}
+
+.BoxStyle img {
+    max-width: auto; /* Set the maximum width for the image */
+    height: 100%; /* Maintain the aspect ratio */
+}
+
+.headimage {
+    width: 30%; /* Set the width to 30% */
+    max-width: 100%; /* Ensure the image doesn't exceed the box */
+    height: auto;
+    display: block; 
+    margin: 0 auto; /* Center horizontally */ }
