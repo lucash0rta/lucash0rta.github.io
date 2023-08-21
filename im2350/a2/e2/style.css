@@ -1,63 +1,161 @@
+/* z-index order */
+
 *{
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
 }
 
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
 :root{
-    --col01: rgb(0,0,0);
-    --col02: rgb(80,80,80);
-    --col03: rgb(160,160,160);
-    --col04: rgb(240,240,240);
-    --border: solid 0.25rem var(--col01)
+  --col-01:#ffffff;
+  --col-02:#010101;
+  --col-03:#cef5ff;
+  --col-04:#b6e878;
+  --font-head: 1.5rem; font-weight: bold; text-align: center;;
+  --border: 5px double var(--col-02);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.centeredwrapper{ 
-    display: flex;
-    justify-content: space-evenly;
-    
+.header{ font-weight: bold; font-size: 2rem; text-align: center;}
+
+.recipe-flexbox{ 
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--col-01);
+  padding: 1rem;
+  width: 100%;
+}
+  
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 3vw;
 }
 
-.overallwrapper{
-    display: flex;
-    padding: 3rem;
-    width: 71vh;
-    height: 100vh;
-    justify-content: space-evenly;
-    flex-direction: column;
-    gap: 1vh;
+.alltext{ font-weight: lighter;
+margin: 0.5rem;}
+
+/*
+  i've set up a basic flexbox for each recipe container - you might want to change some of the 
+  flex properties here on the container or on the individual flex items depending on how you want to style them
+*/
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  min-width: 20%;
+  max-width: 500px;
+  overflow: hidden;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: var(--col-03);
+  border-radius: 1rem;
 }
 
-.flex1{
-    display: flex;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    gap: 1vh;
+.FilterSection{
+
 }
 
-.flex2{
-    display: flex;
-    flex-direction: column;
-}
-.border{
-    border: var(--border);
+.FilterBox{
+
 }
 
-.flexweight1{
-flex-grow: 1;
-justify-content: space-evenly;
-gap: 1vh;
+.FilterButton{
+
+}
+/* 
+  this class will be applied to the last filter button clicked - remember because it's below .FilterButton it will overwrite
+  any duplicate properties
+*/
+.SelectedFilter{
+  
 }
 
-.flexweight2{
-    flex-grow: 2;
-    gap: 1vh;
+.RecipeLink{
+
 }
 
-.flexweight05{
-    flex-grow: 0.5;
-    gap: 1vh;
+.RecipeName{ font-size: var(--font-head);
+
 }
 
-h1{ 
-    text-align: center;
+.Author{
+
 }
+
+.RecipeImageContainer{
+  display: flex;
+  flex-direction: column;
+  width: 120%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: -2rem;
+}
+
+.RecipeImg{
+max-width: 150%;
+max-height: 40vh;
+}
+
+.Attribution{
+  font-size: 0.8rem;
+  color: #222323;
+  width: 80%;
+  text-align: left;
+  padding: 0.3rem;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.Publisher{
+
+}
+
+.Cuisine{
+
+}
+
+.TimeToCook{
+
+}
+
+.SkillLevel{
+
+}
+
+.Course{
+
+}
+
+.Servings{
+
+}
+
+.Dietary{
+
+}
+
+.DatePublished{
+
+}
+
+.DateUpdated{
+
+}
+
+.SpecialEquipment{
+
+}
+
