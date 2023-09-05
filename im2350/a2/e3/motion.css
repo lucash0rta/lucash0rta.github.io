@@ -1,0 +1,99 @@
+#motion-container{
+  display: flex;
+  flex-direction: column;
+}
+
+#transition-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.transitionExample{
+  padding: 1rem;
+  height: 4rem;
+  background-color: blue;
+  flex-grow: 1;
+  transition: 1000ms;
+  cursor: pointer;
+}
+
+#transition-example-1:hover{
+  background-color: red;
+  transition: 10000ms;
+}
+
+#transition-example-1:active{
+  background-color: green;
+  transition: 10000msec;
+}
+
+#transition-example-2:hover{
+  background-color: green;
+  color: aliceblue;
+  transition: background-color 2000ms, color 100ms;
+  
+}
+
+#animation-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.animationExample{
+  background: linear-gradient(red, rgb(255, 255, 255));
+  background-size: 200%;
+  height: 8rem;
+  background-color: blue;
+  flex-grow: 1;
+  
+  
+}
+
+
+
+@keyframes cycleColour {
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: greenyellow;
+  }
+  100% {
+  background-color: crimson;
+  height: 16rem;
+  }
+}
+
+
+
+
+#animation-example-1{
+  animation: cycleColour 5s infinite ease-in;
+}
+
+#animation-example-2{
+  animation: cycleColour 5s infinite ease-out;
+}
+
+#animation-example-3{
+  animation: cycleColour 5s infinite ease-in-out;
+}
+
+#animation-example-4{
+  animation: cycleColour 5s infinite linear;
+}
+
+#animation-example-5{
+  animation: cycleColour 5s infinite ease-in reverse;
+}
+
+#animation-example-6{
+  animation: cycleColour 5s infinite ease-in alternate;
+} 
+
+
+
