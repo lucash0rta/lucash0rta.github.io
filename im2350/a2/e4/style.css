@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "Orbitron";
+  src: url("myFont.wofhttps://fonts.googleapis.com/css?family=Orbitron");
+}
 
 /* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
 /* https://lospec.com/palette-list/1bit-monitor-glow */
@@ -22,7 +26,7 @@ body{
   background-color: #313131;
   color: rgb(192, 255, 202);
   height: 100vh;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron";
   font-size: 1.5em;
 }
 
