@@ -24,10 +24,9 @@
 
 body{
   background-color: #313131;
-  color: rgb(192, 255, 202);
+  
   height: 100vh;
-  font-family: "Orbitron";
-  font-size: 1.5em;
+  
 }
 
 .audio-player-wrapper{
@@ -150,7 +149,7 @@ body{
   border-radius: 500px;
   top: -15px;
   background-size: contain;
-  /* setting the pointer event so that you can still click the prog bar  */
+  /* setting the pointer event to none so that you can still click the progress bar that is underneath  */
   pointer-events: none;
   color: rgb(20, 20, 20);
   filter: drop-shadow(0 0 0.2rem rgb(25, 25, 25));
@@ -211,8 +210,11 @@ transform: translateY(-23px);
   pointer-events: all;
 }
 
-
+/* Here Is the content holder grid setup I have created to be able to space out the elements how I like */
 .contentHolder{
+  font-family: "Orbitron";
+  font-size: 1.5em;
+  color: rgb(192, 255, 202);
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(20, 1fr);
@@ -222,7 +224,7 @@ transform: translateY(-23px);
 .mediaPlayerOvertop, .mediaPlayerBase, .rotateDisk{
   grid-row: 1/-1;
 }
-
+/* this was a grid element that I created to test the spacing and visualise the css grid within my browser while i was creating the page. I ended up discovering a function within firefox that showed the layout in a clearer way with numbers live along the grid that made the designing process much easier.  */
 .grid-item {
   border: 1px solid black; /* Add a border to grid items */
   padding: 10px; /* Add some padding for spacing within grid items */
@@ -234,6 +236,8 @@ transform: translateY(-23px);
   grid-column: 1/-1;
   width: 100%;
 }
+
+/* I rendered out my media player I modelled in blender with the camera limit set so that only the sections that are over the top of the disk are visible and the background wouldnt render below is my css for placing this png */
 .mediaPlayerOvertop{
   grid-column: 1/-1;
   width: 100%;
@@ -264,7 +268,18 @@ transform: translateY(-23px);
   transform: translateY(-5px);
 }
 
+.attribution{
+  width: 70%;
+  text-align: center;
+  font-style: oblique;
+  font-size: 20px;
+  color: white;
+  align-self: center;
+}
 
+a {
+  color: white;
+}
 
 @keyframes loadingAnimation {
   100%{

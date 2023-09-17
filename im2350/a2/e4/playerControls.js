@@ -80,6 +80,10 @@ function playPause(){
     document.getElementById("audioPlayOverlay").style.display = "none";
     
     /* ADDING IN PAUSE AND PLAY FOR ANIMATION */
+    /* here I have added to the original code for the pressing pause and play 
+    and I have added in that when the audio element is set to play that the css animation will trigger
+    in my css I have also set the playstate of the animation on load to pause so that the animation 
+    does not begin until the play button has been pressed.  */
     animatedDisk.style.animationPlayState = "running"
 
   } else {
@@ -166,7 +170,9 @@ audioElement.addEventListener('timeupdate', () => {
   // of the div as the style.left was not working 
   // document.getElementById("progressCircle").style.fontSize = progressPercentage + "px";
 
-  // turns out i just needed to change the css position to relative also i added - 1.5 so that it aligns with the progress bar 
+  // turns out i just needed to change the css position to relative also i added - 1.5 so that it aligns with the progress bar
+  /* I decided to use this method of displaying the progress so that it would match the aesthetics and design of my player and so that I could have more freedom over how it was represented 
+  as changing the progress bar itself did not provide me with the options to be able to only create a single point instead of representing as a bar.   */ 
 
   document.getElementById("progressCircle").style.left = progressPercentage - 1.5 + "%";
 
