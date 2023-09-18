@@ -281,6 +281,38 @@ a {
   color: white;
 }
 
+.progDocumentHolder{
+  width: 70%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+
+}
+
+.moodboard{
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;}
+
+.assets{
+  width: auto;
+  height: 100px;
+}
+
+.resourcesHolder{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+align-items: center;}
+
+.screenshots{width: 50%;
+}
+  
+
 @keyframes loadingAnimation {
   100%{
     background-position: 50% 0%;
