@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --col01: rgb(0,0,0);
+    --col02: rgb(80,80,80);
+    --col03: rgb(160,160,160);
+    --col04: rgb(240,240,240);
+    --border: solid 2rem var(--col03)
+}
+
+#canvas1 {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+h1{
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(240, 248, 255, 0.461);
+    padding: 2%;
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+}
