@@ -180,32 +180,6 @@ class Particle {
                     } else {
                         this.collided = false; // Reset the collision flag if no collision occurred in this frame
                     }
-                    const divRect = document.getElementById('caption').getBoundingClientRect();
-const leftEdge = divRect.left;
-const rightEdge = divRect.right;
-const topEdge = divRect.top;
-const bottomEdge = divRect.bottom;
-
-// Check overlap with the left edge
-if (this.x + this.size / 2 > leftEdge && this.x - this.size / 2 < leftEdge && this.y + this.size / 2 > topEdge && this.y - this.size / 2 < bottomEdge) {
-    this.x = leftEdge - this.size / 2;
-    this.vx *= -1;
-}
-// Check overlap with the right edge
-if (this.x - this.size / 2 < rightEdge && this.x + this.size / 2 > rightEdge && this.y + this.size / 2 > topEdge && this.y - this.size / 2 < bottomEdge) {
-    this.x = rightEdge + this.size / 2;
-    this.vx *= -1;
-}
-// Check overlap with the top edge
-if (this.y + this.size / 2 > topEdge && this.y - this.size / 2 < topEdge && this.x + this.size / 2 > leftEdge && this.x - this.size / 2 < rightEdge) {
-    this.y = topEdge - this.size / 2;
-    this.vy *= -1;
-}
-// Check overlap with the bottom edge
-if (this.y - this.size / 2 < bottomEdge && this.y + this.size / 2 > bottomEdge && this.x + this.size / 2 > leftEdge && this.x - this.size / 2 < rightEdge) {
-    this.y = bottomEdge + this.size / 2;
-    this.vy *= -1;
-}
 
 
                 }
@@ -405,3 +379,17 @@ canvas.addEventListener('click', () => {
         }
     }
 });
+
+
+//setting a timrout function so that the event isnt constantly being contradicted by itself.
+//when setting the pointer events to none after hover then the mouse would no longer be hovering 
+//and the  layer would be visible again
+document.querySelector('.hoverTrigger').addEventListener('mouseover', function() {
+    this.style.opacity = '0';
+    this.style.pointerEvents = 'none';
+    setTimeout(() => {
+        this.style.opacity = '1';
+        this.style.pointerEvents = 'auto';
+    }, 3000);  // 4000 milliseconds equals 4 seconds
+});
+
