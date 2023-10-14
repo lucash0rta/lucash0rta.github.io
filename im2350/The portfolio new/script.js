@@ -400,58 +400,67 @@ canvas.addEventListener('click', () => {
         }
     }
 });
-
 document.addEventListener("DOMContentLoaded", () => {
-    const popupCard = document.getElementById("DaveCourtDiv");
-    const closeButton = document.getElementById("closeButtonHouseParty");
 
-    closeButton.addEventListener("click", () => {
-        popupCard.style.display = "none";
+    /* DaveCourtHouseParty */
+    const popupCardDaveCourt = document.getElementById("DaveCourtDiv");
+    const closeButtonDaveCourt = document.getElementById("closeButtonHouseParty");
+
+    closeButtonDaveCourt.addEventListener("click", () => {
+        toggleDisplay(popupCardDaveCourt);
     });
+
+    /* threedme */
+    const popupCard3DMe = document.getElementById("ThreeDMeDiv");
+    const closeButton3DMe = document.getElementById("closeButton3dMe");
+
+    closeButton3DMe.addEventListener("click", () => {
+        toggleDisplay(popupCard3DMe);
+    });
+
+    /* speculative future */
+    const popupCardSpeculative = document.getElementById("speculativeFutureDiv");
+    const closeButtonSpeculative = document.getElementById("closeButtonSpeculativeFuture");
+
+    closeButtonSpeculative.addEventListener("click", () => {
+        toggleDisplay(popupCardSpeculative);
+    });
+
+    /* cyberfeminism */
+    const popupCardCyberFeminism = document.getElementById("cyberFeminismDiv");
+    const closeButtonCyberFeminism = document.getElementById("closeButtoncyberFeminism");
+
+    closeButtonCyberFeminism.addEventListener("click", () => {
+        toggleDisplay(popupCardCyberFeminism);
+    });
+
+    /* paradise club */
+    const popupCardParadiseClub = document.getElementById("paradiseClubDiv");
+    const closeButtonParadiseClub = document.getElementById("closeButtonParadiseClub");
+
+    closeButtonParadiseClub.addEventListener("click", () => {
+        toggleDisplay(popupCardParadiseClub);
+    });
+
+    /* draining */
+    const popupCardDraining = document.getElementById("drainingDiv");
+    const closeButtonDraining = document.getElementById("closeButtonDraining");
+
+    closeButtonDraining.addEventListener("click", () => {
+        toggleDisplay(popupCardDraining);
+    });
+
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const popupCard = document.getElementById("ThreeDMeDiv");
-    const closeButton = document.getElementById("closeButton3dMe");
+// Helper function to toggle the display of the given element
+function toggleDisplay(element) {
+    if (element.style.display === "none" || element.style.display === "") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
 
-    closeButton.addEventListener("click", () => {
-        popupCard.style.display = "none";
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const popupCard = document.getElementById("speculativeFutureDiv");
-    const closeButton = document.getElementById("closeButtonSpeculativeFuture");
-
-    closeButton.addEventListener("click", () => {
-        popupCard.style.display = "none";
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const popupCard = document.getElementById("cyberFeminismDiv");
-    const closeButton = document.getElementById("closeButtoncyberFeminism");
-
-    closeButton.addEventListener("click", () => {
-        popupCard.style.display = "none";
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const popupCard = document.getElementById("paradiseClubDiv");
-    const closeButton = document.getElementById("closeButtonParadiseClub");
-
-    closeButton.addEventListener("click", () => {
-        popupCard.style.display = "none";
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const popupCard = document.getElementById("drainingDiv");
-    const closeButton = document.getElementById("closeButtonDraining");
-
-    closeButton.addEventListener("click", () => {
-        popupCard.style.display = "none";
-    });
-});
 
 
 //setting a timrout function so that the event isnt constantly being contradicted by itself.

@@ -72,7 +72,7 @@ img {
 
 
 
-.popupCard{
+.popupCard {
 position: relative;
 align-items: center;
 width: 60%;
@@ -83,6 +83,14 @@ backdrop-filter: blur(20px);
 /* display: none; */
 text-align: center;
 margin: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+    .popupCard {
+        background-color: rgba(240, 248, 255, 0.806);
+        width: 96%;
+        /* Other properties remain the same, so they don't need to be repeated */
+    }
 }
 
 
@@ -152,3 +160,6 @@ body, html {
     height: 100%;
 }
 
+.bodyTextPopups{
+    display: none;
+}
