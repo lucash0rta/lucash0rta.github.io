@@ -20,13 +20,14 @@ console.log(this.element);
 const imageFiles = ['renderPersonal.png', 'uberGame.png', 'insta.png', 'DaveCourt.png', 'cyberFeminism.png', 'speculativeFuture.png', 'draining.png', 'logo.png', 'ThreeDMe.png', 'paradiseClub.png', 'mediaPlayer.png'];
 const imageLinks = {
     insta: "https://www.instagram.com/_lucashorta_/",
-    DaveCourt: "https://lucash0rta.github.io/im2350/Portfolio/Houseparty.html",
+    DaveCourt: document.getElementById("DaveCourtDiv"),
     uberGame: "https://www.youtube.com/",
-    cyberFeminism: "https://lucash0rta.github.io/im2350/Portfolio/Cyberfeminism.html",
-    ThreeDMe: "https://lucash0rta.github.io/im2350/Portfolio/3dme.html",
-    speculativeFuture: "https://www.google.com/maps",
+    cyberFeminism: document.getElementById("cyberFeminismDiv"),
+    ThreeDMe: document.getElementById("ThreeDMeDiv"),
+    speculativeFuture: document.getElementById("speculativeFutureDiv"),
     mediaPlayer: "https://lucash0rta.github.io/im2350/a2/e4/index.html",
-    uberGame: "https://www.google.com/maps"
+    draining: document.getElementById("drainingDiv"),
+    paradiseClub: document.getElementById("paradiseClubDiv")
 }
 let testString = "insta.png"
 
@@ -343,7 +344,7 @@ function animate() {
     //redrawing the canvas with a background fill so that the trails from movement can be controlled 
     // using rgba so that I can utilise the alpha channel to show the path of the image or trails 
 
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     effect.handleParticles(ctx);
     requestAnimationFrame(animate);
@@ -367,8 +368,9 @@ canvas.addEventListener('mousemove', e => {
     }
 });
 
+/*  here i have edited the code for the original html setup that i had 
 
-
+replacing the  href with the link 
 canvas.addEventListener('click', () => {
     for (const particle of effect.particles) {
         if (particle.hovered && particle.imageSrc) {
@@ -378,6 +380,70 @@ canvas.addEventListener('click', () => {
             }
         }
     }
+});
+
+*/
+
+canvas.addEventListener('click', () => {
+    for (const particle of effect.particles) {
+        if (particle.hovered && particle.imageSrc) {
+            const link = particle.imageSrc.replace('.png', '');
+            const div = imageLinks[link];
+            div.style.display = 'block';
+        }
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const popupCard = document.getElementById("DaveCourtDiv");
+    const closeButton = document.getElementById("closeButtonHouseParty");
+
+    closeButton.addEventListener("click", () => {
+        popupCard.style.display = "none";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const popupCard = document.getElementById("ThreeDMeDiv");
+    const closeButton = document.getElementById("closeButton3dMe");
+
+    closeButton.addEventListener("click", () => {
+        popupCard.style.display = "none";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const popupCard = document.getElementById("speculativeFutureDiv");
+    const closeButton = document.getElementById("closeButtonSpeculativeFuture");
+
+    closeButton.addEventListener("click", () => {
+        popupCard.style.display = "none";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const popupCard = document.getElementById("cyberFeminismDiv");
+    const closeButton = document.getElementById("closeButtoncyberFeminism");
+
+    closeButton.addEventListener("click", () => {
+        popupCard.style.display = "none";
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const popupCard = document.getElementById("paradiseClubDiv");
+    const closeButton = document.getElementById("closeButtonParadiseClub");
+
+    closeButton.addEventListener("click", () => {
+        popupCard.style.display = "none";
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const popupCard = document.getElementById("drainingDiv");
+    const closeButton = document.getElementById("closeButtonDraining");
+
+    closeButton.addEventListener("click", () => {
+        popupCard.style.display = "none";
+    });
 });
 
 
@@ -390,6 +456,6 @@ document.querySelector('.hoverTrigger').addEventListener('mouseover', function()
     setTimeout(() => {
         this.style.opacity = '1';
         this.style.pointerEvents = 'auto';
-    }, 3000);  // 4000 milliseconds equals 4 seconds
+    }, 4000);  // 4000 milliseconds equals 4 seconds
 });
 
