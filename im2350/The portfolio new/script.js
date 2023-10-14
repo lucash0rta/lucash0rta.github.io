@@ -390,6 +390,13 @@ canvas.addEventListener('click', () => {
             const link = particle.imageSrc.replace('.png', '');
             const div = imageLinks[link];
             div.style.display = 'block';
+
+            // Scroll to the div
+            div.scrollIntoView({
+                behavior: 'smooth', // smooth scroll
+                block: 'center',    // vertical alignment
+                inline: 'center'    // horizontal alignment
+            });
         }
     }
 });

@@ -16,11 +16,13 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
 }
 
 
 
 .hoverTrigger{
+    z-index: 1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,7 +52,7 @@
     border-radius: 50px;
     backdrop-filter: blur(50px);
     transition: opacity 0.2s ease-in-out; /* This line makes it fade smoothly */
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: center;
     pointer-events: none;
@@ -68,17 +70,35 @@ img {
     opacity: 0;
 /* pointer-events: none; */
 
+
+
 .popupCard{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+position: relative;
+align-items: center;
+width: 60%;
 background-color: rgba(240, 248, 255, 0.461);
 padding: 30px;
 border-radius: 50px;
 backdrop-filter: blur(20px);
-display: none;
+/* display: none; */
 text-align: center;
+margin: 20px;
+}
+
+
+/* having issues where if the content is fixed on the background the scroll doesnt trigger unless hovered over 
+the area that is scrollable. 
+thinking to myself if this should be a feature not a bug. the user is stuck on the initial page until they interact 
+with the site */
+
+.contentHolder{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    top: 100%
+
 
 }
 
@@ -124,5 +144,11 @@ body{
 
 .HousePartyFlexBox{
     width: 30%;
+}
+
+body, html {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100%;
 }
 
