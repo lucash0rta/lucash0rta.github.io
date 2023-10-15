@@ -17,9 +17,9 @@ console.log(this.element);
 
 
 // array of images that are to be included in the site 
-const imageFiles = ['renderPersonal.png', 'uberGame.png', 'insta.png', 'DaveCourt.png', 'cyberFeminism.png', 'speculativeFuture.png', 'draining.png', 'logo.png', 'ThreeDMe.png', 'paradiseClub.png', 'mediaPlayer.png'];
+const imageFiles = ['renderPersonal.png', 'uberGame.png', 'DaveCourt.png', 'cyberFeminism.png', 'speculativeFuture.png', 'draining.png', 'ThreeDMe.png', 'paradiseClub.png', 'mediaPlayer.png', 'contactMe.png'];
 const imageLinks = {
-    insta: "https://www.instagram.com/_lucashorta_/",
+    contactMe: document.getElementById("contactMeDiv"),
     DaveCourt: document.getElementById("DaveCourtDiv"),
     uberGame: "https://www.youtube.com/",
     cyberFeminism: document.getElementById("cyberFeminismDiv"),
@@ -27,7 +27,8 @@ const imageLinks = {
     speculativeFuture: document.getElementById("speculativeFutureDiv"),
     mediaPlayer: "https://lucash0rta.github.io/im2350/a2/e4/index.html",
     draining: document.getElementById("drainingDiv"),
-    paradiseClub: document.getElementById("paradiseClubDiv")
+    paradiseClub: document.getElementById("paradiseClubDiv"),
+    mediaPlayer: document.getElementById("mediaPlayerDiv")
 }
 let testString = "insta.png"
 
@@ -407,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtonDaveCourt = document.getElementById("closeButtonHouseParty");
 
     closeButtonDaveCourt.addEventListener("click", () => {
-        toggleDisplay(popupCardDaveCourt);
+        toggleDisplay(popupCardDaveCourt, closeButtonDaveCourt);
     });
 
     /* threedme */
@@ -415,7 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton3DMe = document.getElementById("closeButton3dMe");
 
     closeButton3DMe.addEventListener("click", () => {
-        toggleDisplay(popupCard3DMe);
+        toggleDisplay(popupCard3DMe, closeButton3DMe);
     });
 
     /* speculative future */
@@ -423,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtonSpeculative = document.getElementById("closeButtonSpeculativeFuture");
 
     closeButtonSpeculative.addEventListener("click", () => {
-        toggleDisplay(popupCardSpeculative);
+        toggleDisplay(popupCardSpeculative, closeButtonSpeculative);
     });
 
     /* cyberfeminism */
@@ -431,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtonCyberFeminism = document.getElementById("closeButtoncyberFeminism");
 
     closeButtonCyberFeminism.addEventListener("click", () => {
-        toggleDisplay(popupCardCyberFeminism);
+        toggleDisplay(popupCardCyberFeminism, closeButtonCyberFeminism);
     });
 
     /* paradise club */
@@ -439,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtonParadiseClub = document.getElementById("closeButtonParadiseClub");
 
     closeButtonParadiseClub.addEventListener("click", () => {
-        toggleDisplay(popupCardParadiseClub);
+        toggleDisplay(popupCardParadiseClub, closeButtonParadiseClub);
     });
 
     /* draining */
@@ -447,20 +448,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButtonDraining = document.getElementById("closeButtonDraining");
 
     closeButtonDraining.addEventListener("click", () => {
-        toggleDisplay(popupCardDraining);
+        toggleDisplay(popupCardDraining, closeButtonDraining);
     });
 
+
+/* mediaPlayerDiv */
+const popupCardMediaPlayer = document.getElementById("mediaPlayerDiv");
+const closeButtonMediaPlayer = document.getElementById("closeButtonMediaPlayer");
+
+closeButtonMediaPlayer.addEventListener("click", () => {
+    toggleDisplay(popupCardMediaPlayer, closeButtonMediaPlayer);
 });
 
+    /* contactMeDiv */
+    const popupCardContactMe = document.getElementById("contactMeDiv");
+    const closeButtonContactMe = document.getElementById("closeButtonContactMe");
+    closeButtonContactMe.addEventListener("click", () => {
+        toggleDisplay(popupCardContactMe, closeButtonContactMe);
+    });
+
+    
+    });
+
+
 // Helper function to toggle the display of the given element
-function toggleDisplay(element) {
+function toggleDisplay(element, closeButton) {
     if (element.style.display === "none" || element.style.display === "") {
         element.style.display = "block";
+        closeButton.querySelector('img').src = "new_image.png"; // Image to show when popupCard3DMe is displayed
     } else {
         element.style.display = "none";
+        closeButton.querySelector('img').src = "cross.png"; // Original cross image
     }
 }
-
 
 
 //setting a timrout function so that the event isnt constantly being contradicted by itself.

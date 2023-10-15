@@ -48,8 +48,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(240, 248, 255, 0.461);
-    padding: 30px;
-    border-radius: 50px;
+    padding: 20px;
+    /* border-radius: 50px; */
     backdrop-filter: blur(50px);
     transition: opacity 0.2s ease-in-out; /* This line makes it fade smoothly */
     width: 100%;
@@ -78,18 +78,22 @@ align-items: center;
 width: 60%;
 background-color: rgba(240, 248, 255, 0.461);
 padding: 30px;
-border-radius: 50px;
+/* border-radius: 50px; */
 backdrop-filter: blur(20px);
 /* display: none; */
 text-align: center;
 margin: 20px;
 }
 
+/* changing the properties for mobile devices because blur doesnt work
+so I increased the opacity to make the text more legible and 
+increasing the sizing of the div / decreasing the padding allows the content to sit better on the page */
+
 @media only screen and (max-width: 480px) {
     .popupCard {
-        background-color: rgba(240, 248, 255, 0.806);
-        width: 96%;
-        /* Other properties remain the same, so they don't need to be repeated */
+        background-color: rgba(240, 248, 255, 0.906);
+        width: 97%;
+        padding: 15px;
     }
 }
 
@@ -162,4 +166,15 @@ body, html {
 
 .bodyTextPopups{
     display: none;
+}
+
+.mediaplayphoto{
+    width: 40%;
+}
+
+.mediaPlayerPhotoHolder{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
 }
