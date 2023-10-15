@@ -124,10 +124,12 @@ with the site */
 
 h1{
     font-family: 'Neutral Face', sans-serif;
+    font-weight: lighter;
 }
 
 h2{ font-family: 'Neutral Face', sans-serif;
     font-size: medium;
+    font-weight: lighter;
 }
 
 p { font-family: 'Lato', sans-serif;}
